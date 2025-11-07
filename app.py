@@ -76,6 +76,7 @@ def format_messages(messages):
 def generate_form():
     return """
     <form action="/" method="POST">
+        <p>Testing pipeline</p>
         <input type="text" name="message">
         <input type="submit" value="Send">
     </form>

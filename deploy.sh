@@ -17,10 +17,10 @@ ssh -i $KEY_PATH $EC2_HOST << EOF
   docker rm message-server || true
   docker run -p 5002:5002 \
     -e APP_ENV=PRODUCTION \
-    -e POSTGRES_USER=postgres \
-    -e POSTGRES_PASSWORD=MaKeRs1234 \
-    -e POSTGRES_HOST=will-message-server-db.cvruukypsgyb.eu-west-2.rds.amazonaws.com \
-    -e POSTGRES_DB=postgres \
+    -e POSTGRES_USER='${{ secrets.POSTGRES_USER }}' \
+    -e POSTGRES_PASSWORD='${{ secrets.POSTGRES_PASSWORD }}' \
+    -e POSTGRES_HOST='${{ secrets.POSTGRES_HOST }}' \
+    -e POSTGRES_DB='postgres' \
     message-server
 EOF
 
