@@ -3,6 +3,3 @@ def test_get_home(web_client):
     assert response.status_code == 200
     assert "<h2>Your Messages</h2>" in response.data.decode("utf-8")
     assert "<form action=" in response.data.decode("utf-8")
-
-def test_deliberate_fail():
-    assert True == False
