@@ -42,6 +42,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     # "environment" must match the name of your GitHub environment
+    needs: test
     environment: prod
 
     steps:
